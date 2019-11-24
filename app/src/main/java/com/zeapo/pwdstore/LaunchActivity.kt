@@ -6,6 +6,7 @@ package com.zeapo.pwdstore
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.zeapo.pwdstore.crypto.PgpActivity
@@ -48,6 +49,6 @@ class LaunchActivity : AppCompatActivity() {
             startActivity(Intent(this, PasswordStore::class.java))
         }
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-        finish()
+        Handler().postDelayed({ finish() }, 500L)
     }
 }
